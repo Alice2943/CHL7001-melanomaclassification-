@@ -23,4 +23,4 @@ The image dataset was collected from multiple hospitals and organizations such a
 
 ## Data Augmentation
 
-![](/image/preprocessing.png)
+![](/image/preprocessing.jpg)
