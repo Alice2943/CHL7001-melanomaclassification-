@@ -80,7 +80,7 @@ For benign cases, we applied cropping only once, based on the center of the imag
 
 In order to investigate the effect of image size on skin lesion classification performance, we also cropped the images with five different pre-defined scales, 224 x 224, 240 x 240, 260 x 260, 300 x and 380 x 380.
 
-![](/image/Flowchart (1).png)
+![](/image/flow.png)
 
 ![](/image/WX20200806-142813@2x.png)
 
@@ -89,7 +89,7 @@ The EfficientNets.ipynb contains the training codes.
 
 For each experiment, we would define the cropping size and batch size. The file would read from the folders containg the resized images and crop the images based on the pre-defined image scale. Then, the processed image would be put into a image data generator from Keras API, where we can define different data augmentation strategies. After that, we would send the image into the EfficientNet architecture.
 
-![](/image/Untitled (2) copy.png)
+![](/image/archi.png)
 
 We selected three models from the EfficientNets family, EfficientNets-B0, EfficientNets-B1 and EfficientNets-B3 to experiment their performances. The EfficientNets are state-of-art algorithm for image classification. It uses a scaling method of uniformly scaling model parameters with a compound efficient. Among the common CNN models, EfficientNets have proven to be the model with highest accuracy \cite{6}. The EfficientNets architecture have different depth of network. The main difference between EfficientNets B0 to B7 is the number of parameters. We selected three shallower models to train the model. With fewer parameters and shallower network depth, we could prevent over-fitting of the model and reduce computation costs.
 
