@@ -70,7 +70,7 @@ Before we feed the images into the EfficientNets, we apply standard pre-processi
 ### Over-sampling
 Instead of the imbalances of the classification outcomes in the training set, we have decided to implement the oversampling strategy to adjust the ratio of the benign and malignant cases. In general, we are increasing the proportion of malignant cases by adding replicates of the image into the training set to make different replicates.
 
-In order to have a similar scale of all skin lesions in the training image sets, we resize the images from J $\times$ K to L $\times$ 480, maintaining the aspect ratio. 
+In order to have a similar scale of all skin lesions in the training image sets, we resize the images from J x K to L x 480, maintaining the aspect ratio. 
 
 The procedure of resizing are in the file data-preprocessing.py.
 
@@ -89,7 +89,8 @@ The EfficientNets.ipynb contains the training codes.
 
 For each experiment, we would define the cropping size and batch size. The file would read from the folders containg the resized images and crop the images based on the pre-defined image scale. Then, the processed image would be put into a image data generator from Keras API, where we can define different data augmentation strategies. After that, we would send the image into the EfficientNet architecture.
 
-![](/image/Untitled (2) copy.png)
+![](/image/Untitled(2)copy.png)
+
 We selected three models from the EfficientNets family, EfficientNets-B0, EfficientNets-B1 and EfficientNets-B3 to experiment their performances. The EfficientNets are state-of-art algorithm for image classification. It uses a scaling method of uniformly scaling model parameters with a compound efficient. Among the common CNN models, EfficientNets have proven to be the model with highest accuracy \cite{6}. The EfficientNets architecture have different depth of network. The main difference between EfficientNets B0 to B7 is the number of parameters. We selected three shallower models to train the model. With fewer parameters and shallower network depth, we could prevent over-fitting of the model and reduce computation costs.
 
 The network consists of a base layer from EfficientNet, a global maximum pooling layer, a batch normalization layer, a dropout layer and two fully connected layers. We adapt the global maximum pooling layer 2D to convert the 4D tensors to 2D tensors. The layer would have less number of features comparing to a flat layer and would effectively reduce the number of parameters. We used a dropout factor of 0.2 in the dropout layer. A batch normalization layer is also added after the dropout layer. The rationale of adding these layers to the base layer is to prevent the risk of overfitting, especially with imbalanced data.
