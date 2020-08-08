@@ -80,7 +80,7 @@ For benign cases, we applied cropping only once, based on the center of the imag
 
 In order to investigate the effect of image size on skin lesion classification performance, we also cropped the images with five different pre-defined scales, 224 x 224, 240 x 240, 260 x 260, 300 x and 380 x 380.
 
-![](image/Flowchart (1).png)
+![](/image/Flowchart (1).png)
 
 ![](/image/WX20200806-142813@2x.png)
 
